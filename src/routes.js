@@ -4,8 +4,8 @@ const router = require('express').Router();
 const ledController = require('./controllers/led.controller');
 
 router.get('/', (req, res) => {
-    res.render('home', { 
-        title: 'GPIO LED Switch',
+    res.status(200).render('home', { 
+        title: 'LED Switch',
         ledStatus: 'OFF'
     });
 });
@@ -13,13 +13,19 @@ router.get('/', (req, res) => {
 router.post('/ops/:action', (req, res) => {
     let action = req.params.action;
     if(action === 'off') {
-        console.log('LED is ON');
         ledController.turnOn();
+        res.status(200).res.render('home', { 
+            title: 'LED Switch',
+            ledStatus: 'ON'
+        });
     } else {
-        console.log('LED is OFF');
         ledController.turnOff();
+        res.status(200).res.render('home', { 
+            title: 'LED Switch',
+            ledStatus: 'OFF'
+        });
     }
-    // res.status(200).redirect('/')
+    
 });
 
 module.exports = router;
