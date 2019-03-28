@@ -1,3 +1,7 @@
 
 <h1>Control Your LED here !</h1>
 <h4>LED Status : {{ ledStatus }}</h4>
+<form method="POST">
+    <button type="submit" formaction="/ops/on" class="btn btn-primary">ON</button>
+    <button type="submit" formaction="/ops/off" class="btn btn-primary">OFF</button>
+</form>
