@@ -12,6 +12,7 @@ const turnOff = () => {
     led.write(0, error => {
         if(error) throw error;
     });
+    led.unexport();
 }
 
 module.exports = {
