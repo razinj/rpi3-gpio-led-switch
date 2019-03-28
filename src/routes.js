@@ -12,20 +12,19 @@ router.get('/', (req, res) => {
 
 router.post('/ops/:action', (req, res) => {
     let action = req.params.action;
-    if(action === 'off') {
+    if(action === 'on') {
         ledController.turnOn();
-        res.status(200).res.render('home', { 
+        res.status(200).render('home', { 
             title: 'LED Switch',
             ledStatus: 'ON'
         });
     } else {
         ledController.turnOff();
-        res.status(200).res.render('home', { 
+        res.status(200).render('home', { 
             title: 'LED Switch',
             ledStatus: 'OFF'
         });
     }
-    
 });
 
 module.exports = router;
