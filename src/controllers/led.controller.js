@@ -13,3 +13,8 @@ const turnOff = () => {
         if(error) throw error;
     });
 }
+
+module.exports = {
+    turnOn, 
+    turnOff
+}
