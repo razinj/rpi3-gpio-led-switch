@@ -4,15 +4,15 @@
 
 * Usage :
 
-Rename `.env.default` to `.env`
+1. Rename `.env.default` to `.env`
 
-Install dependencies :
+2. Install dependencies :
 
 ```javascript
 npm i
 ```
 
-Start express server :
+3. Start express server :
 
 ```javascript
 node server.js
