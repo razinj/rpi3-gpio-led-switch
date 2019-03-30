@@ -2,8 +2,6 @@
 
 ## Control LED using Raspberry Pi 3 Model B built in GPIO.
 
----
-
 * Usage :
 
 Install dependencies :
