@@ -1,7 +1,7 @@
 'use strict';
 
 const router = require('express').Router();
-const ledController = require('./controllers/led.controller');
+const ledService = require('./services/led.service');
 
 router.get('/', (req, res) => {
     res.status(200).render('home', {
@@ -13,13 +13,13 @@ router.get('/', (req, res) => {
 router.post('/ops/:action', (req, res) => {
     let action = req.params.action;
     if (action === 'on') {
-        ledController.turnOn();
+        ledService.toggle();
         res.status(200).render('home', {
             title: 'LED Switch',
             ledStatus: 'ON'
         });
     } else {
-        ledController.turnOff();
+        ledService.toggle();
         res.status(200).render('home', {
             title: 'LED Switch',
             ledStatus: 'OFF'
